@@ -1,9 +1,13 @@
 import React from 'react'
 
-// Custome button with icon
-export const ButtonWithIcon: React.FC = () => {
+// Custom button with icon
+interface ButtonWithIconProps {
+  onClick?: () => void;
+}
+
+export const ButtonWithIcon: React.FC<ButtonWithIconProps> = ({ onClick }) => {
     return(
-        <button>
+        <button onClick={onClick}>
             <div>
                 Testing new component
             </div>
