@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import { Dialog, DialogTitle, DialogContent, Button, TextField, Box } from "@mui/material";
 
-type AuthModalProps = {
+type LoginModalProps = {
   open: boolean;
   handleClose: () => void;
 };
 
-const AuthModal: React.FC<AuthModalProps> = ({ open, handleClose }) => {
+const LoginModal: React.FC<LoginModalProps> = ({ open, handleClose }) => {
   const [isSignUp, setIsSignUp] = useState(false);
 
   const switchMode = () => {
@@ -73,4 +73,4 @@ const AuthModal: React.FC<AuthModalProps> = ({ open, handleClose }) => {
   );
 };
 
-export default AuthModal;
+export default LoginModal;

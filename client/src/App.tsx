@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './App.css';
 import { ButtonWithIcon } from './components/ButtonWithIcon'
-import AuthModal from './components/Login';
+import LoginModal from './components/Login';
 
 function App() {
   const [isModalOpen, setModalOpen] = useState(false);
@@ -17,7 +17,7 @@ function App() {
   return (
     <div className="App">
       <ButtonWithIcon onClick={handleModalOpen} />
-      <AuthModal open={isModalOpen} handleClose={handleModalClose} />
+      <LoginModal open={isModalOpen} handleClose={handleModalClose} />
       <p> Starting new project </p>
     </div>
   );
