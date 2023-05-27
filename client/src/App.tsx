@@ -18,7 +18,6 @@ function App() {
     <div className="App">
       <ButtonWithIcon onClick={handleModalOpen} />
       <LoginModal open={isModalOpen} handleClose={handleModalClose} />
-      <p> Starting new project </p>
     </div>
   );
 }
