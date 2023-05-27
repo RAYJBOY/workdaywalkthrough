@@ -1,6 +1,6 @@
 import React from 'react'
 
-// Custome button with icon
+// Custom button with icon
 export const ButtonWithIcon: React.FC = () => {
     return(
         <button>
