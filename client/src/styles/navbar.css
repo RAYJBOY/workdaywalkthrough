@@ -1,0 +1,9 @@
+.outterContainer {
+    display: flex;
+    background-color: grey;
+    justify-content: space-around;
+}
+
+.navBarItem {
+    margin: 5px;
+}
