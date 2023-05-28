@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import './App.css';
 import { ButtonWithIcon } from './components/ButtonWithIcon'
 import LoginModal from './components/Login';
+import { faUser } from '@fortawesome/free-regular-svg-icons';
+
 
 function App() {
   const [isModalOpen, setModalOpen] = useState(false);
@@ -16,9 +18,8 @@ function App() {
 
   return (
     <div className="App">
-      <ButtonWithIcon onClick={handleModalOpen} />
+      <ButtonWithIcon onClick={handleModalOpen} icon={faUser}/>
       <LoginModal open={isModalOpen} handleClose={handleModalClose} />
-      <p> Starting new project </p>
     </div>
   );
 }

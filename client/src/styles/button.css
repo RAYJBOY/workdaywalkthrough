@@ -1,0 +1,14 @@
+.iconButton {
+    background: 'blue';
+    display: flex;
+    align-items: center;
+    padding: 3px 0;
+}
+
+.buttonText {
+    margin: 0 5px;
+}
+
+.buttonIcon {
+    padding-left: 5px;
+}
