@@ -5,5 +5,14 @@
 
 
 ## Conventions
-- When merging into `staging`, make sure to "Squash and Merge". When merging `staging` into `main`, do a regular merge.
+- If you have a feature branch you want to push:
+  - commit you're feature branch changes
+  - checkout staging
+  - git pull staging
+  - checkout feature branch
+  - squash you're current feature branch (google this)
+  - rebase the squashed branch into staging: `get rebase staging`
+  - `git push -f` (force push it)
+  - Open a PR on Github
+  - `Rebase and Merge`
 - Styling - all components should have their own dedicated styling files. This include one-off components or components used frequently.
