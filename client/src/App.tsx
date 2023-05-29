@@ -33,9 +33,9 @@ function App() {
 
   return (
     <div className="App">
+      <NavBar links={links}></NavBar>
       <ButtonWithIcon onClick={handleModalOpen} />
       <LoginModal open={isModalOpen} handleClose={handleModalClose} />
-      <NavBar links={links}></NavBar>
     </div>
   );
 }
