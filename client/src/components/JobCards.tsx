@@ -1,4 +1,4 @@
-import { Avatar, Card, Typography } from "@mui/material";
+import { Avatar, Card, Divider, Typography } from "@mui/material";
 import { Stack } from "@mui/system";
 
 const JobCards = () => {
@@ -11,6 +11,7 @@ const JobCards = () => {
                     Microsoft
                 </Typography>
             </Stack>
+            <Divider variant="middle"/>
             <Typography variant="body1" component="div" color="text.secondary">
                 Title: Software Engineer
             </Typography>
