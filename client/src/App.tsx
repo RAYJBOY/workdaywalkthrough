@@ -3,9 +3,25 @@ import { ButtonWithIcon } from './components/ButtonWithIcon'
 import LoginModal from './components/Login';
 import { faUser } from '@fortawesome/free-regular-svg-icons';
 import JobCards from './components/JobCards';
-
+import { NavBar, link } from './components/NavBar';
 
 function App() {
+
+  const links:link[] = [
+    {
+      displayName: 'Home',
+      link: '/home'
+    },
+    {
+      displayName: 'About',
+      link: '/about' 
+    }, 
+    {
+      displayName: 'Contact',
+      link: '/contact'
+    }
+];
+
   const [isModalOpen, setModalOpen] = useState(false);
 
   const handleModalClose = () => {
@@ -18,8 +34,9 @@ function App() {
 
   return (
     <div className="App">
-      <JobCards></JobCards>
+      <NavBar links={links}></NavBar>
       <ButtonWithIcon onClick={handleModalOpen} icon={faUser}/>
+      <JobCards></JobCards>
       <LoginModal open={isModalOpen} handleClose={handleModalClose} />
     </div>
   );
