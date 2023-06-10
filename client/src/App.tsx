@@ -4,6 +4,7 @@ import LoginModal from './components/Login';
 import { faUser } from '@fortawesome/free-regular-svg-icons';
 import JobCards from './components/JobCards';
 import { NavBar, link } from './components/NavBar';
+import { JobSubmissionForm } from './components/JobSubmissionForm'
 
 function App() {
 
@@ -35,9 +36,10 @@ function App() {
   return (
     <div className="App">
       <NavBar links={links}></NavBar>
-      <ButtonWithIcon onClick={handleModalOpen} icon={faUser}/>
+      <JobSubmissionForm></JobSubmissionForm>
+      {/* <ButtonWithIcon onClick={handleModalOpen} icon={faUser}/>
       <JobCards></JobCards>
-      <LoginModal open={isModalOpen} handleClose={handleModalClose} />
+      <LoginModal open={isModalOpen} handleClose={handleModalClose} /> */}
     </div>
   );
 }
