@@ -1,4 +1,4 @@
-import { FormControl, InputAdornment, InputLabel, MenuItem, OutlinedInput, TextField, Typography } from "@mui/material";
+import { FormControl, InputAdornment, InputLabel, MenuItem, OutlinedInput, TextField, Typography, Button } from "@mui/material";
 import React from "react"
 
 const jobTypes = [
@@ -79,7 +79,18 @@ export const JobSubmissionForm = () => {
                 startAdornment={<InputAdornment position="start">£</InputAdornment>}
                 label="Amount"
             />
-        </FormControl>        
+        </FormControl>
+
+        <div style={{'gridRowStart': 5}}>
+            <Button variant="contained" size="large" style={{'margin': '5px'}}>
+                Upload Video
+            </Button>  
+
+            <Button variant="contained" size="large">
+                Submit
+            </Button>  
+        </div>
+              
     </div>
   )
 };
