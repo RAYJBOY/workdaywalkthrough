@@ -30,7 +30,7 @@ export const JobSubmissionForm = () => {
                      'justifyContent':'center', 
                      'gridColumn': 'span 3'
                     }}>
-            <Typography variant="h3">Job Details</Typography>
+            <Typography variant="h3">New Job Posting</Typography>
         </div>
 
         <TextField 
