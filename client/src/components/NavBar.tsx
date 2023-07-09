@@ -16,8 +16,8 @@ export const NavBar:React.FC<NavBarProps> = ({links}) => {
             <Toolbar>
                 <Typography variant='h5' component='div' sx={{flexGrow: 1}} align='left'>WorkdayWalkthrough</Typography>
                 <Stack direction='row' divider={<Divider orientation="vertical" flexItem/>} spacing={3}>
-                    {links.map((item) => (
-                        <Button color='inherit'>
+                    {links.map((item, index) => (
+                        <Button key={index} color='inherit'>
                             {item.displayName}
                         </Button>
                     ))}
