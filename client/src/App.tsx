@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
-import { ButtonWithIcon } from './components/ButtonWithIcon'
+import { ButtonWithIcon } from './components/ButtonWithIcon';
 import LoginModal from './components/Login';
 import { faUser } from '@fortawesome/free-regular-svg-icons';
 import JobCards from './components/JobCards';
 import { NavBar, link } from './components/NavBar';
+import Filter, { FilterOption } from './components/filter'
 
 function App() {
 
@@ -20,7 +21,7 @@ function App() {
       displayName: 'Contact',
       link: '/contact'
     }
-];
+  ];
 
   const [isModalOpen, setModalOpen] = useState(false);
 
@@ -32,10 +33,16 @@ function App() {
     setModalOpen(true);
   };
 
+  const handleFilterChange = (selectedValue: FilterOption | null) => {
+    // write code to filter job cards here
+    console.log(selectedValue);
+  };
+
   return (
     <div className="App">
       <NavBar links={links}></NavBar>
       <ButtonWithIcon onClick={handleModalOpen} icon={faUser}/>
+      <Filter onFilterChange={handleFilterChange}/>
       <JobCards></JobCards>
       <LoginModal open={isModalOpen} handleClose={handleModalClose} />
     </div>
@@ -43,4 +50,5 @@ function App() {
 }
 
 export default App;
+
 
