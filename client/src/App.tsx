@@ -24,27 +24,27 @@ function App() {
     }
   ];
 
-  const [isModalOpen, setModalOpen] = useState(false);
+  // const [isModalOpen, setModalOpen] = useState(false);
 
-  const handleModalClose = () => {
-    setModalOpen(false);
-  };
+  // const handleModalClose = () => {
+  //   setModalOpen(false);
+  // };
 
-  const handleModalOpen = () => {
-    setModalOpen(true);
-  };
+  // const handleModalOpen = () => {
+  //   setModalOpen(true);
+  // };
 
-  const handleFilterChange = (selectedValue: FilterOption | null) => {
-    // write code to filter job cards here
-    console.log(selectedValue);
-  };
+  // const handleFilterChange = (selectedValue: FilterOption | null) => {
+  //   // write code to filter job cards here
+  //   console.log(selectedValue);
+  // };
 
   return (
-    <div className="App">
+    <div>
       <NavBar links={links}></NavBar>
-      <ButtonWithIcon onClick={handleModalOpen} icon={faUser}/>
+      {/*<ButtonWithIcon onClick={handleModalOpen} icon={faUser}/>
       <Filter onFilterChange={handleFilterChange}/>
-      {/* <JobSubmissionForm></JobSubmissionForm>
+      <JobSubmissionForm></JobSubmissionForm>
       <ButtonWithIcon onClick={handleModalOpen} icon={faUser}/>
       <JobCards></JobCards>
       <LoginModal open={isModalOpen} handleClose={handleModalClose} /> */}
