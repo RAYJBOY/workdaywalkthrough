@@ -5,6 +5,7 @@ import { faUser } from '@fortawesome/free-regular-svg-icons';
 import JobCards from './components/JobCards';
 import { NavBar, link } from './components/NavBar';
 import Filter, { FilterOption } from './components/filter'
+import { JobSubmissionForm } from './components/JobSubmissionForm'
 
 function App() {
 
@@ -43,8 +44,10 @@ function App() {
       <NavBar links={links}></NavBar>
       <ButtonWithIcon onClick={handleModalOpen} icon={faUser}/>
       <Filter onFilterChange={handleFilterChange}/>
+      {/* <JobSubmissionForm></JobSubmissionForm>
+      <ButtonWithIcon onClick={handleModalOpen} icon={faUser}/>
       <JobCards></JobCards>
-      <LoginModal open={isModalOpen} handleClose={handleModalClose} />
+      <LoginModal open={isModalOpen} handleClose={handleModalClose} /> */}
     </div>
   );
 }
