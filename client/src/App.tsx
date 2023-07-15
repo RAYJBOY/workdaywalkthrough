@@ -45,7 +45,7 @@ function App() {
 
   return (
     <div>
-      <NavBar links={links}></NavBar>
+      {/* <NavBar links={links}></NavBar> */}
       <Router>
         <Routes>
           <Route path='/' element={<HomePage/>}/>
