@@ -6,20 +6,24 @@ import JobCards from './components/JobCards';
 import { NavBar, link } from './components/NavBar';
 import Filter, { FilterOption } from './components/filter'
 import { JobSubmissionForm } from './components/JobSubmissionForm'
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { HomePage } from './pages/HomePage';
+import JobSearchPage from './pages/JobSearchPage';
+import ContactPage from './pages/ContactPage';
 
 function App() {
 
   const links:link[] = [
     {
       displayName: 'Home',
-      link: '/home'
+      link: '/'
     },
     {
-      displayName: 'About',
-      link: '/about' 
+      displayName: 'Jobs',
+      link: '/jobSearchPage' 
     }, 
     {
-      displayName: 'Contact',
+      displayName: 'Help/Contact',
       link: '/contact'
     }
   ];
@@ -42,6 +46,13 @@ function App() {
   return (
     <div>
       <NavBar links={links}></NavBar>
+      <Router>
+        <Routes>
+          <Route path='/' element={<HomePage/>}/>
+          <Route path='/jobSearchPage' element={<JobSearchPage/>}/>
+          <Route path='/contact' element={<ContactPage/>}/>         
+        </Routes>
+      </Router>
       {/*<ButtonWithIcon onClick={handleModalOpen} icon={faUser}/>
       <Filter onFilterChange={handleFilterChange}/>
       <JobSubmissionForm></JobSubmissionForm>
