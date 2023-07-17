@@ -1,4 +1,7 @@
 import { AppBar, Toolbar, Typography, Stack, Button, Divider } from '@mui/material'
+import PersonIcon from '@mui/icons-material/Person';
+import { useState } from 'react';
+import LoginModal from './Login';
 
 export interface link {
     displayName: string;
@@ -7,9 +10,11 @@ export interface link {
 
 interface NavBarProps {
     links: link[];
+    userIsLoggedIn: boolean;
+    handleModalOpen?: () => void
 }
 
-export const NavBar:React.FC<NavBarProps> = ({links}) => {
+export const NavBar:React.FC<NavBarProps> = ({links, userIsLoggedIn, handleModalOpen}) => {
 
     return (
         <AppBar position='static'>
@@ -21,6 +26,7 @@ export const NavBar:React.FC<NavBarProps> = ({links}) => {
                             {item.displayName}
                         </Button>
                     ))}
+                    {!userIsLoggedIn && <Button startIcon={<PersonIcon/>} color='inherit' onClick={handleModalOpen}>Sign in/up</Button>}
                 </Stack>
             </Toolbar>
         </AppBar>

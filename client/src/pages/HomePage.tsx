@@ -1,14 +1,27 @@
-import React from "react"
+import React, { useState } from "react"
 import { NavBar } from "../components/NavBar";
 import { homePageNavBar } from "../constants/NavBarConstants";
 import { Typography } from "@mui/material";
 import '../styles/homePage.css'
+import LoginModal from "../components/Login";
 
 
 export const HomePage = () => {
+
+  const [isModalOpen, setModalOpen] = useState(false);
+
+  const handleModalClose = () => {
+    setModalOpen(false);
+  };
+
+  const handleModalOpen = () => {
+    setModalOpen(true);
+  };
+
   return (
     <div>
-      <NavBar links={homePageNavBar}/>
+      <NavBar links={homePageNavBar} userIsLoggedIn={false} handleModalOpen={handleModalOpen}/>
+      <LoginModal open={isModalOpen} handleClose={handleModalClose} />
       <div className="mainDisplayContainer">
         <Typography variant="h2" gutterBottom>
           Our Vision
