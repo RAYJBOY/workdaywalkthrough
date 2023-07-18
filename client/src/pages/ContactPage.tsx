@@ -1,10 +1,12 @@
 import React from "react"
+import { NavBar } from "../components/NavBar";
+import { helpContactPageNavBar } from "../constants/NavBarConstants";
 
 const ContactPage = () => {
   return (
-    <div>
-      This is the contact page
-    </div>
+    <>
+      <NavBar links={helpContactPageNavBar} userIsLoggedIn={false} />
+    </>
   )
 };
 

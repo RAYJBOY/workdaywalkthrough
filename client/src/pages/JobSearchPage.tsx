@@ -1,11 +1,13 @@
-import React from "react"
+import React from "react";
+import { NavBar } from "../components/NavBar";
+import { jobSearchPageNavBar } from "../constants/NavBarConstants";
 
 const JobSearchPage = () => {
   return (
-    <div>
-      This is the job search page
-    </div>
-  )
+    <>
+      <NavBar links={jobSearchPageNavBar} userIsLoggedIn={false} />
+    </>
+  );
 };
 
 export default JobSearchPage;
