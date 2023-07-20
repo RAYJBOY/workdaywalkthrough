@@ -9,3 +9,16 @@
 .mainDisplay {
     width: 75%;
 }
+
+.meetTheTeamContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5%;
+    row-gap: 10%;
+}
+
+.meetTheTeamText {
+    width: 320px;
+    height: 212px;
+    position: relative;
+}
