@@ -1,32 +1,49 @@
 import { Avatar, Card, Divider, Typography } from "@mui/material";
 import { Stack } from "@mui/system";
 
-const JobCards = () => {
+export type JobCardType = {
+    company: string,
+    title: string,
+    payMin: number,
+    payMax: number,
+    location: string,
+    id: number
+}
+
+interface JobCardsProps {
+    company: string,
+    title: string,
+    payMin: number,
+    payMax: number,
+    location: string,
+}
+
+const JobCard = ({company, title, payMin, payMax, location}: JobCardsProps) => {
   return (
-    <Card raised sx={{maxWidth: 300, padding: "10px"}}>
+    <Card raised sx={{maxWidth: "400px", padding: "10px"}} component="div">
         <Stack spacing={1}>
             <Stack direction="row" spacing={2} alignItems="center" justifyContent="center">
                 <Avatar alt="Microsoft logo" src="../../public/microsoft.jpg"/>
                 <Typography variant="h5" gutterBottom>
-                    Microsoft
+                    {company}
                 </Typography>
             </Stack>
             <Divider variant="middle"/>
             <Typography variant="body1" component="div" color="text.secondary">
-                Title: Software Engineer
+                Title: {title}
             </Typography>
             <Typography variant="body1" component="div" color="text.secondary">
-                Pay range: £30k - £50k
+                Pay range: £{payMin}k - £{payMax}k
             </Typography>
             <Typography variant="body1" component="div" color="text.secondary">
                 Technologies: React, TypeScript, Python
             </Typography>
             <Typography variant="body1" component="div" color="text.secondary">
-                Location: Manchester
+                Location: {location}
             </Typography>
         </Stack>
     </Card>
   )
 };
 
-export default JobCards;
+export default JobCard;
