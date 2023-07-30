@@ -41,7 +41,6 @@ export const HomePage = () => {
       </div>
 
       <Filter onFilterChange={handleFilterChange}></Filter>
-
       <JobResults/>
     </>
   );

@@ -20,7 +20,7 @@ interface JobCardsProps {
 
 const JobCard = ({company, title, payMin, payMax, location}: JobCardsProps) => {
   return (
-    <Card raised sx={{maxWidth: "400px", padding: "10px"}} component="div">
+    <Card raised sx={{maxWidth: "500px", padding: "10px"}} component="div">
         <Stack spacing={1}>
             <Stack direction="row" spacing={2} alignItems="center" justifyContent="center">
                 <Avatar alt="Microsoft logo" src="../../public/microsoft.jpg"/>

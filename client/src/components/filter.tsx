@@ -43,7 +43,7 @@ const Filter: React.FC<FilterProps> = ({ onFilterChange }) => {
   };
 
   return (
-    <div>
+    <div style={{marginBottom:'3rem'}}>
       <Paper elevation={2} sx={{ m: 2 }}>
         <Box display="flex" justifyContent="space-between" padding={1.5}>
           <Autocomplete
