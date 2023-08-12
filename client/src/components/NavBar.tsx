@@ -1,5 +1,6 @@
 import { AppBar, Toolbar, Typography, Stack, Button, Divider } from '@mui/material'
 import PersonIcon from '@mui/icons-material/Person';
+import LogoutIcon from '@mui/icons-material/Logout';
 import { useState } from 'react';
 import LoginModal from './Login';
 
@@ -10,10 +11,11 @@ export interface link {
 
 interface NavBarProps {
     links: link[];
-    userIsLoggedIn: boolean;
+    userIsLoggedIn: boolean | null;
+    setUserIsLoggedIn: React.Dispatch<React.SetStateAction<boolean | null>>
 }
 
-export const NavBar:React.FC<NavBarProps> = ({links, userIsLoggedIn}) => {
+export const NavBar:React.FC<NavBarProps> = ({links, userIsLoggedIn, setUserIsLoggedIn}) => {
 
     const [isModalOpen, setModalOpen] = useState(false);
 
@@ -24,6 +26,10 @@ export const NavBar:React.FC<NavBarProps> = ({links, userIsLoggedIn}) => {
     const handleModalOpen = () => {
       setModalOpen(true);
     };
+
+    const handleLogOut = () => {
+        setUserIsLoggedIn(false);
+    }
 
     return (
         <>
@@ -37,6 +43,7 @@ export const NavBar:React.FC<NavBarProps> = ({links, userIsLoggedIn}) => {
                             </Button>
                         ))}
                         {!userIsLoggedIn && <Button startIcon={<PersonIcon/>} color='inherit' onClick={handleModalOpen}>Sign in/up</Button>}
+                        {userIsLoggedIn && <Button startIcon={<LogoutIcon/>} color='inherit' onClick={handleLogOut}>Sign out</Button>}
                     </Stack>
                 </Toolbar>
             </AppBar>

@@ -8,6 +8,10 @@ export const homePageNavBar:link[] = [
     {
         displayName: 'Help/Contact',
         link: '/contact'
+    },
+    {
+        displayName: 'Register New Job',
+        link: '/registerJob'
     }
 ]
 

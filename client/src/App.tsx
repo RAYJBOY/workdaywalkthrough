@@ -2,39 +2,25 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { HomePage } from './pages/HomePage';
 import JobSearchPage from './pages/JobSearchPage';
 import ContactPage from './pages/ContactPage';
+import RegisterNewJobPage from './pages/employer/RegisterNewJobPage';
+import ActiveJobListings from './pages/employer/ActiveJobListings';
+import { useState } from 'react';
 
 function App() {
-  // const [isModalOpen, setModalOpen] = useState(false);
-
-  // const handleModalClose = () => {
-  //   setModalOpen(false);
-  // };
-
-  // const handleModalOpen = () => {
-  //   setModalOpen(true);
-  // };
-
-  // const handleFilterChange = (selectedValue: FilterOption | null) => {
-  //   // write code to filter job cards here
-  //   console.log(selectedValue);
-  // };
+  
+  const[userIsLoggedIn, setUserIsLoggedIn] = useState<boolean | null>(null)
 
   return (
     <div>
-      {/* <NavBar links={links}></NavBar> */}
       <Router>
         <Routes>
-          <Route path='/' element={<HomePage/>}/>
-          <Route path='/jobSearchPage' element={<JobSearchPage/>}/>
-          <Route path='/contact' element={<ContactPage/>}/>         
+          <Route path='/' element={<HomePage userIsLoggedIn={userIsLoggedIn} setUserIsLoggedIn={setUserIsLoggedIn}/>}/>
+          <Route path='/jobSearchPage' element={<JobSearchPage userIsLoggedIn={userIsLoggedIn} setUserIsLoggedIn={setUserIsLoggedIn}/>}/>
+          <Route path='/contact' element={<ContactPage userIsLoggedIn={userIsLoggedIn} setUserIsLoggedIn={setUserIsLoggedIn}/>}/> 
+          <Route path='/registerJob' element={<RegisterNewJobPage userIsLoggedIn={userIsLoggedIn} setUserIsLoggedIn={setUserIsLoggedIn}/>}/>                 
+          <Route path='/jobListings' element={<ActiveJobListings userIsLoggedIn={userIsLoggedIn} setUserIsLoggedIn={setUserIsLoggedIn}/>}/>                 
         </Routes>
       </Router>
-      {/*<ButtonWithIcon onClick={handleModalOpen} icon={faUser}/>
-      <Filter onFilterChange={handleFilterChange}/>
-      <JobSubmissionForm></JobSubmissionForm>
-      <ButtonWithIcon onClick={handleModalOpen} icon={faUser}/>
-      <JobCards></JobCards>
-      <LoginModal open={isModalOpen} handleClose={handleModalClose} /> */}
     </div>
   );
 }

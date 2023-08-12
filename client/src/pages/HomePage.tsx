@@ -5,8 +5,14 @@ import "../styles/homePage.css";
 import Filter, { FilterOption } from "../components/Filter";
 import MeetTheTeam from "../components/MeetTheTeam";
 import JobResults from "../components/JobResults";
+import { useState } from "react";
 
-export const HomePage = () => {
+interface homePageProps {
+  userIsLoggedIn: boolean | null;
+  setUserIsLoggedIn: React.Dispatch<React.SetStateAction<boolean | null>>
+}
+
+export const HomePage = ({userIsLoggedIn, setUserIsLoggedIn}: homePageProps) => {
 
   const handleFilterChange = (selectedValue: FilterOption | null) => {
     // write code to filter job cards here
@@ -15,7 +21,7 @@ export const HomePage = () => {
 
   return (
     <>
-      <NavBar links={homePageNavBar} userIsLoggedIn={false} />
+      <NavBar links={homePageNavBar} userIsLoggedIn={userIsLoggedIn} setUserIsLoggedIn={setUserIsLoggedIn}/>
       <div className="mainDisplayContainer">
         <Typography variant="h2" gutterBottom>
           Our Vision

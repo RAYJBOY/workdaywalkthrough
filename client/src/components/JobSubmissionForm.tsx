@@ -1,5 +1,4 @@
 import { FormControl, InputAdornment, InputLabel, MenuItem, OutlinedInput, TextField, Typography, Button } from "@mui/material";
-import React from "react"
 
 const jobTypes = [
     {
@@ -17,7 +16,6 @@ const jobTypes = [
 
 ]
 
-
 export const JobSubmissionForm = () => {
   return (
     <div style={{'marginTop':'10px', 
@@ -30,7 +28,7 @@ export const JobSubmissionForm = () => {
                      'justifyContent':'center', 
                      'gridColumn': 'span 3'
                     }}>
-            <Typography variant="h3">New Job Posting</Typography>
+            <Typography variant="h3">Register New Job</Typography>
         </div>
 
         <TextField 
